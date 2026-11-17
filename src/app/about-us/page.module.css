@@ -1,0 +1,21 @@
+.section { padding-bottom: 80px; }
+.panel { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: center; gap: 48px; padding: 40px; border: 1px solid #dce5dc; border-radius: 20px; }
+.panel h3 { margin: 12px 0 20px; }
+.panel p { line-height: 1.8; }
+.panel p + p { margin-top: 16px; }
+.note { padding: 28px; background: #f2f6ef; border-radius: 16px; }
+.note > i { display: inline-block; margin-bottom: 16px; font-size: 36px; color: #294b36; }
+.note h5 { margin-bottom: 12px; }
+.contact { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 40px; }
+.contact h4 { margin-bottom: 12px; }
+.contact > a { flex-shrink: 0; }
+@media (max-width: 991px) {
+    .panel { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 28px; }
+    .contact { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 575px) {
+    .section { padding-bottom: 50px; }
+    .panel { padding: 24px 20px; }
+    .note { padding: 20px; }
+    .contact > a { width: 100%; }
+}

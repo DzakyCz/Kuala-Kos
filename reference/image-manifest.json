@@ -1,0 +1,190 @@
+{
+  "source": "Situs rujukan yang diberikan pengguna",
+  "capturedOn": "2026-10-29",
+  "images": [
+    {
+      "sourcePath": "/assets/images/home/home-1.jpg",
+      "localPath": "/images/kos/home-home-1.jpg",
+      "width": 820,
+      "height": 615,
+      "bytes": 71787,
+      "sha256": "e4fe1e4b7a05d747be365b22c7c80895a58533b89f31e2a020e058bcc1e149a7"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-10.jpg",
+      "localPath": "/images/kos/home-home-10.jpg",
+      "width": 820,
+      "height": 615,
+      "bytes": 65996,
+      "sha256": "785f3e7fb54a2fcb5ed2f98e57bef347e76635bd60f788092ef07d09d698a751"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-2.jpg",
+      "localPath": "/images/kos/home-home-2.jpg",
+      "width": 820,
+      "height": 615,
+      "bytes": 61149,
+      "sha256": "e25bd8e1c9b131b9ef0fb97877d94981c1907a1b8351e88a614147c08cd81116"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-3.1.jpg",
+      "localPath": "/images/kos/home-home-3.1.jpg",
+      "width": 820,
+      "height": 820,
+      "bytes": 46856,
+      "sha256": "35f6623a95d6f343a38dcd37e8b4b02d20b1d7573fd21ea811828d76059a998a"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-3.jpg",
+      "localPath": "/images/kos/home-home-3.jpg",
+      "width": 820,
+      "height": 615,
+      "bytes": 32780,
+      "sha256": "99db678337a5ffd844d99bc5990f6a4863d9b443008e5998b8360b710f93efe4"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-4.jpg",
+      "localPath": "/images/kos/home-home-4.jpg",
+      "width": 820,
+      "height": 615,
+      "bytes": 48046,
+      "sha256": "04a398357e36baa7d53d01c6be402f0b773c52b2dfd5a903cf741e965269725e"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-5.jpg",
+      "localPath": "/images/kos/home-home-5.jpg",
+      "width": 820,
+      "height": 615,
+      "bytes": 73454,
+      "sha256": "622c70c44b10543f5dd7765321a7abe6a18b861317e098808e46b9c87eadffc7"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-6.jpg",
+      "localPath": "/images/kos/home-home-6.jpg",
+      "width": 820,
+      "height": 615,
+      "bytes": 83067,
+      "sha256": "637ad93a6a955bf154104719db84d4a23fae9499bdce34c5231ea0d6402d2871"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-7.jpg",
+      "localPath": "/images/kos/home-home-7.jpg",
+      "width": 1140,
+      "height": 854,
+      "bytes": 83286,
+      "sha256": "ea1d3c5c408fbeb97d0e58e7759a7205011e34c2e7caeaa9f40a637c53e39bf6"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-8.jpg",
+      "localPath": "/images/kos/home-home-8.jpg",
+      "width": 1140,
+      "height": 854,
+      "bytes": 101299,
+      "sha256": "04bbb77d48d75cf27c632bdb33eb5f3fb3adcf8316e6e5f314b7b0af5762e1e5"
+    },
+    {
+      "sourcePath": "/assets/images/home/home-9.jpg",
+      "localPath": "/images/kos/home-home-9.jpg",
+      "width": 820,
+      "height": 615,
+      "bytes": 37434,
+      "sha256": "cd6161b602583972bf4b4d09d493d45b3158d323db0d1cf3243e86022220cc79"
+    },
+    {
+      "sourcePath": "/assets/images/page-title/page-title-15.jpg",
+      "localPath": "/images/kos/page-title-page-title-15.jpg",
+      "width": 1920,
+      "height": 300,
+      "bytes": 50186,
+      "sha256": "284cf3791de5f84e7bc14065e830da374957c351eb0689eb656b1cc3722380a8"
+    },
+    {
+      "sourcePath": "/assets/images/page-title/page-title-16.jpg",
+      "localPath": "/images/kos/page-title-page-title-16.jpg",
+      "width": 1920,
+      "height": 300,
+      "bytes": 23854,
+      "sha256": "6047c65f46744a24c6215db5afb81083bf0bb24ad52c3001c48dba3795301f30"
+    },
+    {
+      "sourcePath": "/assets/images/page-title/page-title-2.jpg",
+      "localPath": "/images/kos/page-title-page-title-2.jpg",
+      "width": 1920,
+      "height": 680,
+      "bytes": 146010,
+      "sha256": "84f6c62c37dbf531e5c9c8ad1b6f73002f6e767d9810bac88ba6bb1dc3589dd0"
+    },
+    {
+      "sourcePath": "/assets/images/page-title/page-title-3.jpg",
+      "localPath": "/images/kos/page-title-page-title-3.jpg",
+      "width": 1920,
+      "height": 680,
+      "bytes": 149771,
+      "sha256": "4ffdfd2df0fa3fe72e34272e01c914aa3ee49179f106493eba08015bc730926a"
+    },
+    {
+      "sourcePath": "/assets/images/section/banner-2.jpg",
+      "localPath": "/images/kos/section-banner-2.jpg",
+      "width": 2880,
+      "height": 900,
+      "bytes": 345922,
+      "sha256": "a8fb42544b952a31fb5b811ad3ed16b60348ef893e09a967d8232d77ecfc45c0"
+    },
+    {
+      "sourcePath": "/assets/images/section/banner-3.jpg",
+      "localPath": "/images/kos/section-banner-3.jpg",
+      "width": 2880,
+      "height": 900,
+      "bytes": 181894,
+      "sha256": "626ba217fab751803417020fe771a43e41a7a8a62e2b6ec4085506c4a498f7c6"
+    },
+    {
+      "sourcePath": "/assets/images/section/properties-details-4.jpg",
+      "localPath": "/images/kos/section-properties-details-4.jpg",
+      "width": 1290,
+      "height": 680,
+      "bytes": 108619,
+      "sha256": "a38c5db85b3cfaaafc5cf19cb0a9e6c83891e48d24103b0b9c3af26fd14ca0ee"
+    },
+    {
+      "sourcePath": "/assets/images/section/properties-gallery-1.jpg",
+      "localPath": "/images/kos/section-properties-gallery-1.jpg",
+      "width": 1270,
+      "height": 1270,
+      "bytes": 116533,
+      "sha256": "1b4e579555385435aa8194dd641d28c4985b741f834451ce2a7503e669126377"
+    },
+    {
+      "sourcePath": "/assets/images/section/properties-gallery-2.jpg",
+      "localPath": "/images/kos/section-properties-gallery-2.jpg",
+      "width": 615,
+      "height": 615,
+      "bytes": 25001,
+      "sha256": "16ad56ad12df45a2c8e0080b360c318cd617d76e5402e3a73540cba00b2c99bb"
+    },
+    {
+      "sourcePath": "/assets/images/section/properties-gallery-3.jpg",
+      "localPath": "/images/kos/section-properties-gallery-3.jpg",
+      "width": 615,
+      "height": 615,
+      "bytes": 44383,
+      "sha256": "7db4996ce6c2d12bb078de4da762648f3ddf776d07cf1740f251c808e7ca672a"
+    },
+    {
+      "sourcePath": "/assets/images/section/properties-gallery-4.jpg",
+      "localPath": "/images/kos/section-properties-gallery-4.jpg",
+      "width": 615,
+      "height": 615,
+      "bytes": 57430,
+      "sha256": "bda8044cb55f375dd5f04f9cf1ace39b042dd13601f3f7f1f60d0af28c840d67"
+    },
+    {
+      "sourcePath": "/assets/images/section/properties-gallery-5.jpg",
+      "localPath": "/images/kos/section-properties-gallery-5.jpg",
+      "width": 615,
+      "height": 615,
+      "bytes": 24328,
+      "sha256": "34cc832cbbda71129fdea32c966e10de50c4b4e986a84d02576fe7a0474d09e4"
+    }
+  ]
+}

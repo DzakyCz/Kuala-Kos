@@ -1,0 +1,28 @@
+/* Shared field styling for all public forms. Checkboxes and hidden inputs retain their own behavior. */
+#wrapper form :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="submit"]):not([type="button"]), textarea, select) {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 56px;
+    padding: 14px 16px;
+    border: 1px solid #dce2dd;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #263c30;
+    font: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    outline: none;
+    transition: border-color .18s, box-shadow .18s;
+}
+#wrapper form :is(input, textarea)::placeholder { color: #879089; opacity: 1; }
+#wrapper form :is(input, textarea, select):hover { border-color: #b7c6b8; }
+#wrapper form :is(input, textarea, select):focus-visible {
+    border-color: #526f51;
+    box-shadow: 0 0 0 3px #e6eee3;
+}
+#wrapper form textarea { min-height: 152px; resize: vertical; }
+#wrapper form input[readonly] { background-color: #f5f7f3; color: #536157; }
+#wrapper form fieldset { min-width: 0; }
+#wrapper form label[for] { display: block; }
