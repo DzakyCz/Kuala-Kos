@@ -1,9 +1,12 @@
 import SiteLayout from "@/components/layout/SiteLayout";
 import PropertyDetails from "@/components/kos/details/PropertyDetails";
 import RelatedProperties from "@/components/kos/details/RelatedProperties";
-import { allProperties } from "@/data/properties";
+import { getPublishedProperty, getRelatedProperties, parseIdParam } from "@/lib/property-queries";
 import React from "react";
 import { notFound } from "next/navigation";
+
+// Data dibaca dari database pada setiap permintaan (kos baru/ubahan langsung tampil).
+export const dynamic = "force-dynamic";
 
 type PageProps = {
     params: Promise<{
@@ -12,21 +15,18 @@ type PageProps = {
 };
 
 export default async function Page({ params }: PageProps) {
-    const { id } = await params;
+    const { id: rawId } = await params;
+    const id = parseIdParam(rawId);
+    if (id === null) notFound();
 
-    const property = allProperties.find((elm) => String(elm.id) === id);
+    const property = await getPublishedProperty(id);
     if (!property) notFound();
+    const related = await getRelatedProperties(id, 6);
 
     return (
         <SiteLayout>
             <PropertyDetails property={property} />
-            <RelatedProperties />
+            <RelatedProperties properties={related} />
         </SiteLayout>
     );
-}
-
-export async function generateStaticParams() {
-    return allProperties.map((property) => ({
-        id: String(property.id),
-    }));
 }

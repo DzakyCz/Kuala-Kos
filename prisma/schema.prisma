@@ -1,0 +1,95 @@
+// Skema database Kuala Kos.
+// SQLite dipakai untuk pengembangan lokal. Untuk produksi, ganti provider menjadi "postgresql"
+// dan DATABASE_URL di .env, lalu jalankan ulang migrasi.
+//
+// Kolom bertipe String yang berisi pilihan tetap (role, status, kosType, dll.) divalidasi
+// oleh Zod di src/lib/validators.ts, karena SQLite tidak mendukung enum secara andal.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int        @id @default(autoincrement())
+  name         String
+  email        String     @unique
+  phone        String?
+  passwordHash String
+  role         String     @default("SEEKER") // ADMIN | OWNER | SEEKER
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  properties   Property[]
+}
+
+model Property {
+  id                  Int             @id @default(autoincrement())
+  title               String
+  kosType             String // "Kos Putra" | "Kos Putri" | "Kos Campur"
+  address             String
+  city                String // nama kawasan, mis. "Rukoh"
+  latitude            Float
+  longitude           Float
+  description         String?
+  priceMonthly        Int
+  priceSixMonths      Int?
+  priceYearly         Int?
+  areaM2              Int?
+  roomWidth           Float?
+  roomLength          Float?
+  bathroomType        String          @default("Luar/Bersama") // "Dalam" | "Luar/Bersama"
+  electricityIncluded Boolean         @default(false)
+  availableRooms      Int             @default(0)
+  status              String          @default("DRAFT") // DRAFT | PUBLISHED | ARCHIVED
+  ownerId             Int
+  owner               User            @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  images              PropertyImage[]
+  facilities          Facility[]
+  inquiries           Inquiry[]
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+
+  @@index([status, city])
+  @@index([ownerId])
+}
+
+model PropertyImage {
+  id         Int      @id @default(autoincrement())
+  url        String
+  alt        String?
+  sortOrder  Int      @default(0)
+  propertyId Int
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId])
+}
+
+// scope: "room" (fasilitas kamar) | "shared" (fasilitas bersama) | "rule" (aturan & akses)
+// Sama dengan facilityGroups di src/lib/kos-search.ts, sehingga filter frontend ("room:AC") cocok.
+model Facility {
+  id         Int        @id @default(autoincrement())
+  scope      String
+  name       String
+  properties Property[]
+
+  @@unique([scope, name])
+}
+
+model Inquiry {
+  id         Int       @id @default(autoincrement())
+  propertyId Int?
+  property   Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  name       String
+  email      String
+  phone      String?
+  message    String
+  status     String    @default("NEW") // NEW | READ | ARCHIVED
+  createdAt  DateTime  @default(now())
+
+  @@index([propertyId])
+  @@index([status])
+}

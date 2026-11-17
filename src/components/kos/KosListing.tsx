@@ -1,5 +1,5 @@
 "use client";
-import { allProperties } from "@/data/properties";
+import type { Property } from "@/types/property";
 import KosCard from "@/components/kos/KosCard";
 import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
@@ -11,7 +11,7 @@ import { activeKosFilters, defaultKosFilters, filterKos, readKosFilters, writeKo
 import filterStyles from "@/components/kos/KosSearchFilters.module.css";
 import { periodPrice } from "@/lib/kos";
 
-export default function KosListing() {
+export default function KosListing({ properties }: { properties: Property[] }) {
     const [filters, setFilters] = useState(defaultKosFilters);
     const [sortingOption, setSortingOption] = useState("Urutan Awal");
     const [page, setPage] = useState(1);
@@ -39,11 +39,11 @@ export default function KosListing() {
     }, [filters, sortingOption, loaded]);
     const updateFilters = (next: KosFilters) => { setFilters(next); setPage(1); };
     const sorted = useMemo(() => {
-        const results = filterKos(allProperties, filters);
+        const results = filterKos(properties, filters);
         if (sortingOption === "Harga Terendah") results.sort((a, b) => periodPrice(a, filters.period)! - periodPrice(b, filters.period)!);
         if (sortingOption === "Harga Tertinggi") results.sort((a, b) => periodPrice(b, filters.period)! - periodPrice(a, filters.period)!);
         return results;
-    }, [filters, sortingOption]);
+    }, [properties, filters, sortingOption]);
     const currentPage = Math.min(page, Math.max(1, Math.ceil(sorted.length / itemPerPage)));
     const activeFilters = activeKosFilters(filters);
 

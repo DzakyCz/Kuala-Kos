@@ -5,13 +5,18 @@ import FeaturedKosSection from "@/components/home/FeaturedKosSection";
 import KosShowcaseSection from "@/components/home/KosShowcaseSection";
 import RentalGuideSection from "@/components/home/RentalGuideSection";
 import SiteLayout from "@/components/layout/SiteLayout";
+import { getPublishedProperties } from "@/lib/property-queries";
 
-export default function Home() {
+// Data kos dibaca dari database pada setiap permintaan, bukan dibekukan saat build.
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+    const properties = await getPublishedProperties(6);
     return (
         <SiteLayout>
             <HeroSection />
-            <FeaturedKosSection />
-            <KosShowcaseSection />
+            <FeaturedKosSection properties={properties} />
+            <KosShowcaseSection properties={properties} />
             <LocationsSection />
             <HowItWorksSection />
             <RentalGuideSection />

@@ -1,19 +1,19 @@
 "use client";
 import Image from "next/image";
-import { properties } from "@/data/properties";
+import type { Property } from "@/types/property";
 import Link from "next/link";
 import React, { useState, useRef } from "react";
 
-const propertiesData = properties.slice(0, 5).map((property) => ({
-    id: `tab${property.id}`,
-    propertyId: property.id,
-    title: property.title,
-    address: property.address,
-    img: property.imgSrc,
-}));
-
-export default function KosShowcaseSection() {
-    const [activeTab, setActiveTab] = useState("tab1");
+export default function KosShowcaseSection({ properties }: { properties: Property[] }) {
+    const propertiesData = properties.slice(0, 5).map((property) => ({
+        id: `tab${property.id}`,
+        propertyId: property.id,
+        title: property.title,
+        address: property.address,
+        img: property.imgSrc,
+    }));
+    // Tab awal = kos pertama yang ada (id kos di database belum tentu 1).
+    const [activeTab, setActiveTab] = useState(propertiesData[0]?.id ?? "");
     const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const handleMouseEnter = (tabId: string) => {
@@ -26,6 +26,8 @@ export default function KosShowcaseSection() {
     const handleMouseLeave = () => {
         if (hoverTimer.current) clearTimeout(hoverTimer.current);
     };
+
+    if (propertiesData.length === 0) return null;
 
     return (
         <div className="section-features-property tf-spacing-1">
